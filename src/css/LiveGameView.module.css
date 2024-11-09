@@ -1,0 +1,169 @@
+.gameControlsContainer {
+  position: absolute;
+  color: white;
+  z-index: 1;
+  margin: 15px;
+  width: 350px;
+  bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+}
+
+.menuButton {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  margin: 8px;
+  z-index: 1;
+  cursor: pointer;
+  background-color: black;
+  padding: 8px;
+}
+
+@media (max-aspect-ratio: 2/3) {
+  .gameControlsContainer {
+    left: 0px;
+    right: 0px;
+    width: auto;
+    margin: 5px;
+  }
+}
+
+.controlButtons {
+  background-color: rgba(0, 0, 0, 1);
+  /* border: 2px solid white; */
+  padding-top: 13px;
+  padding: 13px;
+  cursor: pointer;
+  flex-grow: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.controlsInfoBox {
+  /* border: 2px solid white; */
+  text-align: center;
+  padding: 14px 10px;
+  color: white;
+  background-color: black;
+}
+
+.inningScoreCell {
+  height: 40px;
+  line-height: 40px;
+  font-size: 32px;
+  background-color: rgb(0, 0, 0, 0.2);
+  font-weight: bolder;
+}
+
+.inningHeader {
+  height: 28px;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 4px 0px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.colInfoBoxHeader {
+  text-align: center;
+  background-color: white;
+  color: black;
+  padding: 4px;
+}
+.scoreboard {
+  font-family: Rubik;
+}
+
+.colInfoBox {
+  padding: 7px 8px;
+  border-bottom: 4px solid rgba(1, 1, 1, 0.4);
+}
+
+.inningCol {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.flexCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.freeCamButton {
+  z-index: 1;
+  margin-bottom: 10px;
+  bottom: 0px;
+  position: absolute;
+  background-color: black;
+  color: yellow;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.canvasContainer {
+  position: relative;
+  transition: filter 0.5s;
+  flex-shrink: 1;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.playResultTextFadeIn {
+  opacity: 1 !important;
+}
+
+.playResultText {
+  transition: opacity 1s;
+  z-index: 5;
+  font-weight: bold;
+  text-align: center;
+  font-size: 50px;
+  pointer-events: none;
+  text-shadow: 5px 5px black;
+  color: white;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%)
+}
+
+@media (max-aspect-ratio: 2/3) {
+  .playResultText {
+    font-size: 35px;
+  }
+
+  .controlsInfoBox {
+    display: none;
+  }
+
+  .controlButtons {
+    /* font-size: 12px;
+    padding: 6px; */
+  }
+}
+
+.absoluteCentered {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.tagEl {
+  padding: 4px 13px;
+  min-width: 40px;
+  text-align: center;
+  border-radius: 100px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}

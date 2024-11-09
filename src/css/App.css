@@ -1,0 +1,80 @@
+html, body {
+  height: 100%;
+  font-family: Genesis;
+  width: 100vw;
+  background-color: black;
+  color: white;
+  overflow: hidden;
+  font-family: Genesis;
+}
+
+a {
+  color: yellow;
+}
+
+#root {
+  height: 100%;
+}
+
+.fadeIn {
+  animation: fade 0.5s ease-in-out reverse !important;
+}
+.fadeOut {
+  animation: fade 0.5s ease-in-out forwards;
+}
+
+@keyframes fade {
+  0% { filter: brightness(1) }
+  100% { filter: brightness(0) }
+}
+
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+#hidden-scoreboard {
+  /* display: none; */
+}
+
+.App {
+  height: 100%;
+  font-family: Genesis;
+}
+
+.toggle-button {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  border: 4px solid white;
+  font-family: Genesis;
+  padding: 8px;
+}
+
+.toggle-button_active {
+  background-color: white;
+  color: black;
+  border: 4px solid white;
+}
+
+@font-face {
+  font-family: Rubik;
+  src: url('../fonts/Rubik-Black.ttf');
+  font-weight: bolder;
+}
+
+@font-face {
+  font-family: Rubik;
+  src: url('../fonts/Rubik-Bold.ttf');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Genesis;
+  src: url('../fonts/valis-iii-variant-2-genesis.otf');
+}

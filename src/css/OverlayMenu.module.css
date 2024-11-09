@@ -1,0 +1,56 @@
+.background {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+}
+.modal {
+  background-color: black;
+  padding: 24px 18px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  /* margin-left: -5px;
+  margin-right: -5px; */
+}
+.menuOption {
+  cursor: pointer;
+  padding: 8px 8px;
+}
+
+.incrementButton {
+  cursor: pointer;
+  padding: 5px;
+  margin:-5px;
+}
+
+.incrementButton:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.playSpeedOption {
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.divider {
+  color: gray;
+  text-align: center;
+  margin-bottom: 7px;
+  pointer-events: none;
+}
+
+.divider::before {
+  content: "---------------------";
+}
+.menuOption:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}

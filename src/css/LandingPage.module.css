@@ -1,0 +1,47 @@
+.floatingHeader {
+  position: sticky;
+  top: 0px;
+  width: 100%;
+  color: white;
+  background-color: black;
+  border-bottom: 2px solid white;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0px 10px 0px;
+}
+
+.tabButton {
+  padding: 0px 15px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.tabButton_active {
+  color: yellow;
+}
+
+.landingPageContainer {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.tabsContainer {
+  max-width: 800px;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-aspect-ratio: 1/1) {
+  .floatingHeader {
+    padding: 10px 0px 40px 0px;
+    border-top: 2px solid white;
+    border-bottom: none;
+    bottom: 0px;
+  }
+
+  .landingPageContainer {
+    flex-direction: column-reverse !important;
+  }
+}

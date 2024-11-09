@@ -1,0 +1,60 @@
+.container {
+  margin: 15px;
+  font-size: 20px;
+  position: absolute;
+  width: 350px;
+  bottom: 0px;
+  right: 0px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.matchupContainer {
+  /* border: 2px solid white; */
+  font-size: 14px;
+  margin-bottom: 4px;
+  display: flex;
+  flex-direction: column;
+  font-weight: bolder;
+}
+
+.box {
+  /* border: 2px solid white; */
+  flex-direction: column;
+}
+
+.teamScoreRow {
+  padding: 10px;
+  display: flex;
+}
+
+.scorecard {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  /* border: 2px solid white; */
+}
+
+/* Maximum aspect ratio */
+@media (max-aspect-ratio: 2/3) {
+  .container {
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    font-size: 14px;
+    bottom: auto !important;
+    width: auto;
+    margin: 5px;
+    flex-direction: column-reverse !important;
+  }
+
+  .matchupContainer {
+    font-size: 12px !important;
+    margin-bottom: -1px !important;
+  }
+
+  .teamScoreRow {
+    padding: 7px;
+  }
+}
