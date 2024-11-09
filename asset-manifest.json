@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/baseball-sim/static/css/main.6be09c03.css",
+    "main.js": "/baseball-sim/static/js/main.aa0c7a25.js",
+    "static/js/453.adbf1d5b.chunk.js": "/baseball-sim/static/js/453.adbf1d5b.chunk.js",
+    "static/media/Rubik-Bold.ttf": "/baseball-sim/static/media/Rubik-Bold.d62658f24eb7c7dc739e.ttf",
+    "static/media/Rubik-Black.ttf": "/baseball-sim/static/media/Rubik-Black.cd53051b6608d8737fa2.ttf",
+    "static/media/fx BatHit.mp3": "/baseball-sim/static/media/fx BatHit.dcf5695e4e5138c5b31b.mp3",
+    "static/media/fx HitDirt.mp3": "/baseball-sim/static/media/fx HitDirt.df97a2dc9a61c28b700a.mp3",
+    "static/media/fx MitCatch.mp3": "/baseball-sim/static/media/fx MitCatch.3a018903c7508d194bc9.mp3",
+    "static/media/fx Throw.mp3": "/baseball-sim/static/media/fx Throw.38eec4e205ffd5ebcf43.mp3",
+    "static/media/valis-iii-variant-2-genesis.otf": "/baseball-sim/static/media/valis-iii-variant-2-genesis.c3db462fdd22cfb2012e.otf",
+    "index.html": "/baseball-sim/index.html",
+    "main.6be09c03.css.map": "/baseball-sim/static/css/main.6be09c03.css.map",
+    "main.aa0c7a25.js.map": "/baseball-sim/static/js/main.aa0c7a25.js.map",
+    "453.adbf1d5b.chunk.js.map": "/baseball-sim/static/js/453.adbf1d5b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6be09c03.css",
+    "static/js/main.aa0c7a25.js"
+  ]
+}
