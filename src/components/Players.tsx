@@ -3,7 +3,7 @@ import { useEffect, useMemo } from "react"
 import { AnimationAction, AnimationClip, AnimationMixer, Bone, Color, LoopOnce, Mesh, MeshStandardMaterial, Object3D, RGBAFormat, SkinnedMesh, TextureLoader } from "three"
 import { GLTF, GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
 import {  } from "../LiveGameView"
-import { AllPlayerPositions, BASE_URL, OffensePositionKeys } from "../Constants"
+import { AllPlayerPositions, BASE_PATH, BASE_URL, OffensePositionKeys } from "../Constants"
 import * as SkeletonUtils from 'three/examples/jsm/utils/SkeletonUtils'
 import { GameFeed } from "../data/MLBGameFeed"
 import { CustomDitheredMaterial } from "../util/ScreenDoorShader"
@@ -52,8 +52,8 @@ export class PlayerControls {
   bodyMaterial: CustomDitheredMaterial
   mitMaterial: CustomDitheredMaterial
 
-  static AwayTexture = textureLoader.load('/textures/AwayPlayer_BaseColor.png')
-  static HomeTexture = textureLoader.load('/textures/HomePlayer_BaseColor.png')
+  static AwayTexture = textureLoader.load(`${process.env.PUBLIC_URL}/textures/AwayPlayer_BaseColor.png`)
+  static HomeTexture = textureLoader.load(`${process.env.PUBLIC_URL}/textures/HomePlayer_BaseColor.png`)
 
   constructor(gltfObj: GLTF & ObjectMap, type: CharacterType, playerPos: AllPlayerPositions, teamType?: 'away' | 'home') {
     this.scene = SkeletonUtils.clone(gltfObj.scene)
@@ -101,7 +101,7 @@ export class PlayerControls {
     }
     if (playerPos === 'B') {
       const gltfLoader = new GLTFLoader()
-      gltfLoader.load(`${BASE_URL}/assets/bat.glb`, ({ scene: bat }) => {
+      gltfLoader.load(`${process.env.PUBLIC_URL}/assets/bat.glb`, ({ scene: bat }) => {
         this.bat = bat
         this.batSocketBone?.add(bat)
         this.bat.visible = true
@@ -231,8 +231,8 @@ export class PlayerControls {
 
 export function OffensivePlayer({ playerControls, runner }: { offensivePosition?: OffensePositionKeys, playerControls: PlayerControls, runner?: GameFeed.Runner }) {
   const { camera } = useThree()
-  const safeIndicator = useLoader(GLTFLoader, `${BASE_URL}/assets/safe-indicator.glb`)
-  const outIndicator = useLoader(GLTFLoader, `${BASE_URL}/assets/out-indicator.glb`)
+  const safeIndicator = useLoader(GLTFLoader, `${process.env.PUBLIC_URL}/assets/safe-indicator.glb`)
+  const outIndicator = useLoader(GLTFLoader, `${process.env.PUBLIC_URL}/assets/out-indicator.glb`)
   const safeIndicatorScene = useMemo(() => safeIndicator.scene.clone(), [safeIndicator.scene])
   const outIndicatorScene = useMemo(() => outIndicator.scene.clone(), [outIndicator.scene])
 

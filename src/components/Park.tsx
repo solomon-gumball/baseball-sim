@@ -5,7 +5,7 @@ import { useLoader } from "@react-three/fiber";
 
 export default function Park({ scene }: { scene: Group<Object3DEventMap>}) {
   const [{ scoreboardImage }, dispatch] = useContext(GameFeedContext)
-  const [parkLightmap] = useLoader(TextureLoader, ['/textures/LightingBake.png'])
+  const [parkLightmap] = useLoader(TextureLoader, [`${process.env.PUBLIC_URL}/textures/LightingBake.png`])
   useEffect(() => {
     if (!scoreboardImage) return
     const screenObj = scene.getObjectByName('Screen') as Mesh | undefined

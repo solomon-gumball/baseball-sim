@@ -13,7 +13,7 @@ import { AnimationGroup, AnimationGroupType, CancelledAnimationGroupError } from
 import { clamp, cloneDeep } from 'lodash'
 import { OffensivePlayer, PlayerControls } from './components/Players'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-import { BASE_URL, CONSTANTS, eventCodeToDisplayText, FIELD_LOCATION, getLocationForBaseCode, OffensePositionKeys, PITCH_ANIMATION_DATA } from './Constants'
+import { BASE_PATH, BASE_URL, CONSTANTS, eventCodeToDisplayText, FIELD_LOCATION, getLocationForBaseCode, OffensePositionKeys, PITCH_ANIMATION_DATA } from './Constants'
 import StrikeZone from './components/StrikeZone'
 import { Pixelation, EffectComposer, Bloom, ChromaticAberration } from '@react-three/postprocessing'
 import { TrailRenderer } from './util/TrailRenderer'
@@ -247,9 +247,9 @@ function playSound(audio: HTMLAudioElement) {
 }
 
 function Canvas3dView({ incrementEvent }: { incrementEvent: (inc: number) => void }) {
-  const { scene: parkScene } = useLoader(GLTFLoader, `${BASE_URL}/assets/oracle-park.glb`)
-  const playerGLTF = useLoader(GLTFLoader, `${BASE_URL}/assets/player.glb`)
-  const { scene: baseball } = useLoader(GLTFLoader, `${BASE_URL}/assets/ball.glb`)
+  const { scene: parkScene } = useLoader(GLTFLoader, `${process.env.PUBLIC_URL}/assets/oracle-park.glb`)
+  const playerGLTF = useLoader(GLTFLoader, `${process.env.PUBLIC_URL}/assets/player.glb`)
+  const { scene: baseball } = useLoader(GLTFLoader, `${process.env.PUBLIC_URL}/assets/ball.glb`)
   const lightRef = useRef<DirectionalLight>(null)
   const [showBaseball, setShowBaseball] = useState(false)
   const lightTargetRef = useRef<Object3D>(null)

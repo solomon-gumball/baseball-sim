@@ -272,7 +272,7 @@ export default function useCreateGameData(gamePk?: number): [GameDataState, Disp
 
   useEffect(() => {
     if (initialIndices[0] !== playIndex || initialIndices[1] !== eventIndex) {
-      window.history.replaceState({}, '', window.location.pathname)
+      window.history.replaceState({}, '', window.location.pathname + window.location.hash)
     }
   }, [eventIndex, initialIndices, playIndex])
 
