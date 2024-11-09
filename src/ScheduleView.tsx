@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useSearchParams, Link } from 'react-router-dom'
 import { Schedule } from './data/MLBSchedule'
 import styles from './css/LiveGameView.module.css'
+import { BASE_URL } from './Constants'
 
 function parseFormattedDate(dateString: string | null): Date | null {
   if (dateString == null) return null
@@ -90,7 +91,7 @@ export default function ScheduleView() {
         <br /><br />
         <iframe height="315" src="https://www.youtube.com/embed/kIWMH6PU5B8?si=jUKEwL24QPEtr59D" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
         <br /><br />
-        If you are interested in contributing to the project <a href="https://github.com/solomon-gumball/Baseball">it is open source on github here</a>
+        If you are interested in contributing to the project <a href="https://github.com/solomon-gumball/baseball-sim">it is open source on github here</a>
       </div>
       <div className={styles.flexCol} style={{ boxSizing: 'border-box', alignItems: 'stretch', maxWidth: 800, padding: '40px 15px', width: '100%', marginBottom: 'auto', alignSelf: 'center' }}>
         <div style={{ flexGrow: 1, alignSelf: 'center', textShadow: '2px 2px gray', marginBottom: 20 }}>
@@ -105,7 +106,7 @@ export default function ScheduleView() {
           <div key={date.date} style={{ margin: '10px 0px', borderLeft: '2px solid white', padding: '0px 5px' }}>
             <div>{date.date}</div>
             {date.games.map(game => (
-              <Link key={game.gamePk} to={`/game/${game.gamePk}`} style={{ display: 'block' }}>
+              <Link key={game.gamePk} to={`${BASE_URL}/game/${game.gamePk}`} style={{ display: 'block' }}>
                 <div style={{ width: '100%' }}>
                   <div>{game.teams.away.team.name} VS {game.teams.home.team.name}</div>
                   <div></div>

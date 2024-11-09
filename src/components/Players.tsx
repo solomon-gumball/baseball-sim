@@ -3,7 +3,7 @@ import { useEffect, useMemo } from "react"
 import { AnimationAction, AnimationClip, AnimationMixer, Bone, Color, LoopOnce, Mesh, MeshStandardMaterial, Object3D, RGBAFormat, SkinnedMesh, TextureLoader } from "three"
 import { GLTF, GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
 import {  } from "../LiveGameView"
-import { AllPlayerPositions, OffensePositionKeys } from "../Constants"
+import { AllPlayerPositions, BASE_URL, OffensePositionKeys } from "../Constants"
 import * as SkeletonUtils from 'three/examples/jsm/utils/SkeletonUtils'
 import { GameFeed } from "../data/MLBGameFeed"
 import { CustomDitheredMaterial } from "../util/ScreenDoorShader"
@@ -101,7 +101,7 @@ export class PlayerControls {
     }
     if (playerPos === 'B') {
       const gltfLoader = new GLTFLoader()
-      gltfLoader.load('/assets/bat.glb', ({ scene: bat }) => {
+      gltfLoader.load(`${BASE_URL}/assets/bat.glb`, ({ scene: bat }) => {
         this.bat = bat
         this.batSocketBone?.add(bat)
         this.bat.visible = true
@@ -231,8 +231,8 @@ export class PlayerControls {
 
 export function OffensivePlayer({ playerControls, runner }: { offensivePosition?: OffensePositionKeys, playerControls: PlayerControls, runner?: GameFeed.Runner }) {
   const { camera } = useThree()
-  const safeIndicator = useLoader(GLTFLoader, '/assets/safe-indicator.glb')
-  const outIndicator = useLoader(GLTFLoader, '/assets/out-indicator.glb')
+  const safeIndicator = useLoader(GLTFLoader, `${BASE_URL}/assets/safe-indicator.glb`)
+  const outIndicator = useLoader(GLTFLoader, `${BASE_URL}/assets/out-indicator.glb`)
   const safeIndicatorScene = useMemo(() => safeIndicator.scene.clone(), [safeIndicator.scene])
   const outIndicatorScene = useMemo(() => outIndicator.scene.clone(), [outIndicator.scene])
 
