@@ -4,9 +4,9 @@ import { feetToM, mphToMetersPerSecond } from "./util/MathUtil"
 
 export type OffensePositionKeys = ( 'B' | '1B' | '2B' | '3B')
 export type AllPlayerPositions = GameFeed.DPosAbbr | OffensePositionKeys
+
 export const BASE_URL = 'https://solomon-gumball.github.io/baseball-sim'
 export const BASE_PATH = 'baseball-sim'
-
 // export const BASE_URL = 'http://localhost:3000'
 // export const BASE_PATH = ''
 

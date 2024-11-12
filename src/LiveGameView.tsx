@@ -13,7 +13,7 @@ import { AnimationGroup, AnimationGroupType, CancelledAnimationGroupError } from
 import { clamp, cloneDeep } from 'lodash'
 import { OffensivePlayer, PlayerControls } from './components/Players'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-import { BASE_PATH, BASE_URL, CONSTANTS, eventCodeToDisplayText, FIELD_LOCATION, getLocationForBaseCode, OffensePositionKeys, PITCH_ANIMATION_DATA } from './Constants'
+import { CONSTANTS, eventCodeToDisplayText, FIELD_LOCATION, getLocationForBaseCode, OffensePositionKeys, PITCH_ANIMATION_DATA } from './Constants'
 import StrikeZone from './components/StrikeZone'
 import { Pixelation, EffectComposer, Bloom, ChromaticAberration } from '@react-three/postprocessing'
 import { TrailRenderer } from './util/TrailRenderer'

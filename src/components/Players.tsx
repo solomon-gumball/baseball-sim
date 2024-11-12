@@ -3,7 +3,7 @@ import { useEffect, useMemo } from "react"
 import { AnimationAction, AnimationClip, AnimationMixer, Bone, Color, LoopOnce, Mesh, MeshStandardMaterial, Object3D, RGBAFormat, SkinnedMesh, TextureLoader } from "three"
 import { GLTF, GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
 import {  } from "../LiveGameView"
-import { AllPlayerPositions, BASE_PATH, BASE_URL, OffensePositionKeys } from "../Constants"
+import { AllPlayerPositions, OffensePositionKeys } from "../Constants"
 import * as SkeletonUtils from 'three/examples/jsm/utils/SkeletonUtils'
 import { GameFeed } from "../data/MLBGameFeed"
 import { CustomDitheredMaterial } from "../util/ScreenDoorShader"

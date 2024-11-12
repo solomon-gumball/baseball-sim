@@ -89,7 +89,7 @@ export default function ScheduleView() {
         <br /><br />
         For more information on how the simulation works, watch the making of video on youtube:
         <br /><br />
-        <iframe height="315" src="https://www.youtube.com/embed/kIWMH6PU5B8?si=jUKEwL24QPEtr59D" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+        <iframe height="315" src="https://www.youtube.com/embed/WuAro8no-EI?si=9i13u4ED24P0nZjp&amp;controls=0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
         <br /><br />
         If you are interested in contributing to the project <a href="https://github.com/solomon-gumball/baseball-sim">it is open source on github here</a>
       </div>
