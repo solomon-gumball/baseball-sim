@@ -63,6 +63,7 @@ export const StaticCameraAngles = [
 export type GameDataState = GameDataReducerState & {
   currentPlay?: GameFeed.Play,
   currentEvent?: GameFeed.Event,
+  currentMatchup?: GameFeed.AllPlayMatchup,
   linescore?: GameFeed.Linescore,
   ballLandingLocation?: [number, number, number],
   prevPlay?: GameFeed.Play,
@@ -261,6 +262,7 @@ export default function useCreateGameData(gamePk?: number): [GameDataState, Disp
   const currentPlay = allPlays?.[playIndex]
   const linescore = rawData?.liveData.linescore
   const currentEvent = currentPlay?.playEvents[eventIndex]
+  const currentMatchup = currentPlay?.matchup;
   const prevPlay = rawData?.liveData.plays.allPlays[playIndex - 1]
   const prevEvent = currentPlay?.playEvents[eventIndex - 1]
   const isFinalEvent = (feedState && currentPlay) ? (feedState?.eventIndex >= currentPlay.playEvents.length - 1) : false
@@ -434,6 +436,7 @@ export default function useCreateGameData(gamePk?: number): [GameDataState, Disp
       currrentRunnersOnBase,
       currentPlay,
       currentEvent,
+      currentMatchup,
       linescore,
       ballLandingLocation,
       scoreboardData,

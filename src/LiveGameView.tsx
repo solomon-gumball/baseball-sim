@@ -254,7 +254,7 @@ function Canvas3dView({ incrementEvent }: { incrementEvent: (inc: number) => voi
   const [showBaseball, setShowBaseball] = useState(false)
   const lightTargetRef = useRef<Object3D>(null)
   const [strikeZonePosition, setStrikeZonePosition] = useState<[number, number, number]>()
-  const [{ isFirstEventOfInning, muteEnabled, autoPlayEnabled, isFinalEvent, currrentRunnersOnBase, linescore, currentEvent, currentPlay, ballLandingLocation, playSpeed, eventIndex, prevPlay }, dispatch] = useContext(GameFeedContext)
+  const [{ isFirstEventOfInning, muteEnabled, autoPlayEnabled, isFinalEvent, currrentRunnersOnBase, linescore, currentEvent, currentMatchup, currentPlay, ballLandingLocation, playSpeed, eventIndex, prevPlay }, dispatch] = useContext(GameFeedContext)
   const [runnersStatus, setRunnersStatus] = useState<{ [key in OffensePositionKeys]?: GameFeed.Runner }>({})
   const [ballDidHitGround, setBallDidGround] = useState(false)
   const isTopInning = currentPlay?.about.isTopInning ?? false
@@ -369,10 +369,19 @@ function Canvas3dView({ incrementEvent }: { incrementEvent: (inc: number) => voi
       }
     })
 
-    offense['B'].scene.setRotationFromAxisAngle(new Vector3(0, 1, 0), degToRad(-90))
-    offense['B'].scene.position.set(FIELD_LOCATION.OFFENSE['B'].x, FIELD_LOCATION.OFFENSE['B'].y, FIELD_LOCATION.OFFENSE['B'].z)
     offense['B']?.setAnimationState('BattingIdle')
     offense['B']?.setGloveHand(undefined)
+
+    // if the batter is left handed, mirror the batting animation
+    if (currentMatchup?.batSide.code === 'L') {
+      offense['B'].scene.position.set(-FIELD_LOCATION.OFFENSE['B'].x, FIELD_LOCATION.OFFENSE['B'].y, FIELD_LOCATION.OFFENSE['B'].z)
+      offense['B'].scene.setRotationFromAxisAngle(new Vector3(0, 1, 0), degToRad(90))
+      offense['B'].scene.scale.set(-1, 1, 1)
+    } else {
+      offense['B'].scene.position.set(FIELD_LOCATION.OFFENSE['B'].x, FIELD_LOCATION.OFFENSE['B'].y, FIELD_LOCATION.OFFENSE['B'].z)
+      offense['B'].scene.setRotationFromAxisAngle(new Vector3(0, 1, 0), degToRad(-90))
+      offense['B'].scene.scale.set(1, 1, 1)
+    }
 
     if (currrentRunnersOnBase['1B']) {
       const position = getLocationForBaseCode('1B', 'offense')
